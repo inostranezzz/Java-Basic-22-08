@@ -5,18 +5,22 @@ public class Question {
     private Answer[] answers;
 
     public String getText() {
+
         return text;
     }
 
     public void setText(String text) {
+
         this.text = text;
     }
 
     public Answer[] getAnswers() {
+
         return answers;
     }
 
     public void setAnswers(Answer[] answers) {
+
         this.answers = answers;
     }
 }
