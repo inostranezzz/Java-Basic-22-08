@@ -1,39 +1,24 @@
-package otus.homework.oop;
+package org.example.homework.oop;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Questionnaire {
     private Question[] questions;
-    private static int validAnswerCount = 0;
-    private static int displedAnswerNumber = 1;
+    private int validAnswerCount = 0;
+    private int displedAnswerNumber = 1;
+
+    public Questionnaire(Question[] questions) {
+        this.questions = questions;
+    }
+
+    public void runTest(){
+
+    }
 
     public static void main(String[] args) {
-        Question question1 = new Question();
-        question1.setText("В файл с каким расширением компилируется java-файл?");
-        Answer answer11 = new Answer();
-        answer11.setText("cs");
-        Answer answer12 = new Answer();
-        answer12.setText("java");
-        Answer answer13 = new Answer();
-        answer13.setText("class");
-        answer13.setCorrect(true);
-        Answer answer14 = new Answer();
-        answer14.setText("exe");
-        question1.setAnswers(new Answer[]{answer11, answer12, answer13, answer14});
-        Question question2 = new Question();
+        Question question1 = new Question("В файл с каким расширением компилируется java-файл?", "cs", "java", "class", "exe");
+        Question question2 = new Question("С помощью какой команды git можно получить полную копию удаленного репозитория?", "commit", "push", "clone", "copy");
         question2.setText("С помощью какой команды git можно получить полную копию удаленного репозитория?");
-        Answer answer21 = new Answer();
-        answer21.setText("commit");
-        Answer answer22 = new Answer();
-        answer22.setText("push");
-        Answer answer23 = new Answer();
-        answer23.setText("clone");
-        answer23.setCorrect(true);
-        Answer answer24 = new Answer();
-        answer24.setText("copy");
-        question2.setAnswers(new Answer[]{answer21, answer22, answer23, answer24});
         Question question3 = new Question();
         question3.setText("Какой применяется цикл, когда не известно количество итераций?");
         Answer answer31 = new Answer();
@@ -45,6 +30,8 @@ public class Questionnaire {
         answer33.setText("loop");
         question3.setAnswers(new Answer[]{answer31, answer32, answer33});
         Question[] questions = {question1, question2, question3};
+        Questionnaire questionnaire = new Questionnaire(questions);
+        questionnaire.runTest();
 
 
         for (Question question : questions) {
@@ -93,4 +80,5 @@ public class Questionnaire {
 
 
     }
+
 }
