@@ -11,10 +11,10 @@ public class Questionnaire {
     }
 
     public void runTest(){
-        for (int i = 0; i < questions.length; i++) {
-            questions[i].displayQuestionBlock();
-            boolean answer = questions[i].askAnswer();
-            if (answer){
+        for (Question question : questions) {
+            question.displayQuestionBlock();
+            boolean answer = question.askAnswer();
+            if (answer) {
                 validAnswerCount++;
             }
             System.out.println();
