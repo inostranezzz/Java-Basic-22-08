@@ -1,4 +1,4 @@
-package otus.homework;
+package org.example.homework;
 
 import java.util.Arrays;
 import java.util.Scanner;
