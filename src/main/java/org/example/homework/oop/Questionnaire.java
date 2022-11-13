@@ -7,6 +7,7 @@ public class Questionnaire {
     private int validAnswerCount;
 
     public Questionnaire(Question[] questions) {
+
         this.questions = questions;
     }
 

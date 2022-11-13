@@ -23,6 +23,7 @@ public class Question {
             System.out.println((i+1) + ". " + answerOptions[i]);
         }
     }
+
     public boolean askAnswer() {
         System.out.println("Укажите номер правильного ответа:");
 
