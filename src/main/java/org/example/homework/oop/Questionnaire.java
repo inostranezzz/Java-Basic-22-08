@@ -24,9 +24,9 @@ public class Questionnaire {
     }
 
     public static void main(String[] args) {
-        Question question1 = new Question("В файл с каким расширением компилируется java-файл?", "class","cs", "java", "class", "exe");
-        Question question2 = new Question("С помощью какой команды git можно получить полную копию удаленного репозитория?", "clone","commit", "push", "clone", "copy");
-        Question question3 = new Question("Какой применяется цикл, когда не известно количество итераций?", "while","while", "for", "loop");
+        Question question1 = new Question(new ConsoleUserInput(), "В файл с каким расширением компилируется java-файл?", "class","cs", "java", "class", "exe");
+        Question question2 = new Question(new ConsoleUserInput(), "С помощью какой команды git можно получить полную копию удаленного репозитория?", "clone","commit", "push", "clone", "copy");
+        Question question3 = new Question(new ConsoleUserInput(), "Какой применяется цикл, когда не известно количество итераций?", "while","while", "for", "loop");
         Question[] questions = {question1, question2, question3};
         Questionnaire questionnaire = new Questionnaire(questions);
         questionnaire.runTest();
