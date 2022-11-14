@@ -26,11 +26,11 @@ public class Question {
         int answerNumber = userInput.readAnswer(1, answerOptions.length);
         boolean isValidAnswer = false;
         if (Objects.equals(answerOptions[answerNumber - 1], validAnswer)){
-            System.out.println("Правильно");
+            userOutput.displayText("Правильно");
             isValidAnswer = true;
         }
         else{
-            System.out.println("Неправильно");
+            userOutput.displayText("Неправильно");
         }
 
         return isValidAnswer;
