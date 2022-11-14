@@ -16,7 +16,7 @@ public class ConsoleUserInput implements UserInput {
             isInt = scanner.hasNextInt();
             if (isInt){
                 answerNumber = scanner.nextInt();
-                if (answerNumber <= minValue | answerNumber > maxValue){
+                if (answerNumber < minValue | answerNumber > maxValue){
                     System.out.println("Такого номера не существует. Попробуйте еще раз:");
                 }
                 else{
@@ -27,8 +27,6 @@ public class ConsoleUserInput implements UserInput {
                 System.out.println("Вы ввели не номер. Попробуйте еще раз:");
             }
         }
-
-
         return answerNumber;
     }
 }

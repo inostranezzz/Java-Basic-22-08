@@ -7,21 +7,19 @@ public class Question {
     private final String validAnswer;
     private final String[] answerOptions;
     private final UserInput userInput;
+    private final UserOutput userOutput;
 
 
-    public Question(UserInput userInput, String text, String validAnswer, String... answerOptions) {
+    public Question(UserInput userInput, UserOutput userOutput, String text, String validAnswer, String... answerOptions) {
         this.userInput = userInput;
+        this.userOutput = userOutput;
         this.text = text;
         this.validAnswer = validAnswer;
         this.answerOptions = answerOptions;
     }
 
     public void displayQuestionBlock() {
-        System.out.println(text);
-
-        for (int i = 0; i < answerOptions.length; i++){
-            System.out.println((i+1) + ". " + answerOptions[i]);
-        }
+        userOutput.displayQuestionBlock(text, answerOptions);
     }
 
     public boolean askAnswer() {
@@ -37,4 +35,5 @@ public class Question {
 
         return isValidAnswer;
     }
+
 }
