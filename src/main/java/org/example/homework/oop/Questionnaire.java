@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Questionnaire {
     private final Question[] questions;
-    private int validAnswerCount;
     private final UserOutput userOutput;
 
     public Questionnaire(Question[] questions, UserOutput userOutput) {
@@ -13,6 +12,7 @@ public class Questionnaire {
     }
 
     public void runTest(){
+        int validAnswerCount = 0;
         for (Question question : questions) {
             question.displayQuestionBlock();
             boolean answer = question.askAnswer();

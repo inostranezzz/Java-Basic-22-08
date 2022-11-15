@@ -19,7 +19,10 @@ public class Question {
     }
 
     public void displayQuestionBlock() {
-        userOutput.displayQuestionBlock(text, answerOptions);
+        userOutput.displayText(text);
+        for (int i = 0; i < answerOptions.length; i++){
+            userOutput.displayText((i+1) + ". " + answerOptions[i]);
+        }
     }
 
     public boolean askAnswer() {
