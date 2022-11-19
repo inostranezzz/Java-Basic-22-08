@@ -1,15 +1,25 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class SelectionSort {
-    private static final int COUNT = 100;
+    private static final int COUNT = 10000;
 
     public static void main(String[] args) {
-        List<int[]> list = new ArrayList<>();
-        System.out.println(generateRandomArrayInt(COUNT));
+        List<Integer> list = new ArrayList<>();
+        list.addAll(generateRandomArrayInt(COUNT));
+        System.out.println(list);
+
+        List<Integer> listSelectionSort = new ArrayList<>();
+        listSelectionSort.addAll(list);
+
+        List<Integer> listCollectionSort = new ArrayList<>();
+        listCollectionSort.addAll(list);
+        long start = new Date().getTime();
+        Collections.sort(listCollectionSort);
+        long end = new Date().getTime();
+        System.out.println(listCollectionSort);
+        System.out.println("delta " + (end - start) + " ms");
 
 
 
