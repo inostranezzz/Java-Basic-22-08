@@ -3,7 +3,7 @@ package org.example;
 import java.util.*;
 
 public class SelectionSort {
-    private static final int COUNT = 10000;
+    private static final int COUNT = 10;
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
@@ -42,7 +42,7 @@ public class SelectionSort {
         return randomList;
     }
 
-    private static List<Integer> selectedSort(List<Integer> array){
+    private static void selectedSort(List<Integer> array){
         for(int i = 0; i < array.size() - 1; i++){
             int minIndexPosition = i;
             int previousMinValue = array.get(i);
@@ -54,6 +54,5 @@ public class SelectionSort {
             array.set(i, array.get(minIndexPosition));
             array.set(minIndexPosition, previousMinValue);
         }
-        return array;
     }
 }
