@@ -12,17 +12,19 @@ public class SelectionSort {
 
         List<Integer> listSelectionSort = new ArrayList<>();
         listSelectionSort.addAll(list);
+        long start = new Date().getTime();
+        selectedSort(listSelectionSort);
+        long end = new Date().getTime();
+        System.out.println(listSelectionSort);
+        System.out.println("Selected sort: " + (end - start) + " ms");
 
         List<Integer> listCollectionSort = new ArrayList<>();
         listCollectionSort.addAll(list);
-        long start = new Date().getTime();
+        start = new Date().getTime();
         Collections.sort(listCollectionSort);
-        long end = new Date().getTime();
+        end = new Date().getTime();
         System.out.println(listCollectionSort);
-        System.out.println("delta " + (end - start) + " ms");
-
-
-
+        System.out.println("Quick sort: " + (end - start) + " ms");
     }
 
     private static List<Integer> generateRandomArrayInt(int count){
@@ -38,5 +40,20 @@ public class SelectionSort {
             count--;
         }
         return randomList;
+    }
+
+    private static List<Integer> selectedSort(List<Integer> array){
+        for(int i = 0; i < array.size() - 1; i++){
+            int minIndexPosition = i;
+            int previousMinValue = array.get(i);
+            for(int j = i+1; j < array.size(); j++){
+                if(array.get(minIndexPosition) > array.get(j)){
+                    minIndexPosition = j;
+                }
+            }
+            array.set(i, array.get(minIndexPosition));
+            array.set(minIndexPosition, previousMinValue);
+        }
+        return array;
     }
 }
