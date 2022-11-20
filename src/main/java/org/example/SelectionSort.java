@@ -13,7 +13,7 @@ public class SelectionSort {
         List<Integer> listSelectionSort = new ArrayList<>();
         listSelectionSort.addAll(list);
         long start = new Date().getTime();
-        selectedSort(listSelectionSort);
+        selectionSort(listSelectionSort);
         long end = new Date().getTime();
         System.out.println(listSelectionSort);
         System.out.println("Selected sort: " + (end - start) + " ms");
@@ -42,7 +42,7 @@ public class SelectionSort {
         return randomList;
     }
 
-    private static void selectedSort(List<Integer> array){
+    private static void selectionSort(List<Integer> array){
         for(int i = 0; i < array.size() - 1; i++){
             int minIndexPosition = i;
             int previousMinValue = array.get(i);
