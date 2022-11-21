@@ -6,20 +6,17 @@ public class SelectionSort {
     private static final int COUNT = 10;
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.addAll(generateRandomArrayInt(COUNT));
+        List<Integer> list = new ArrayList<>(generateRandomArrayInt(COUNT));
         System.out.println(list);
 
-        List<Integer> listSelectionSort = new ArrayList<>();
-        listSelectionSort.addAll(list);
+        List<Integer> listSelectionSort = new ArrayList<>(list);
         long start = new Date().getTime();
         selectionSort(listSelectionSort);
         long end = new Date().getTime();
         System.out.println(listSelectionSort);
         System.out.println("Selected sort: " + (end - start) + " ms");
 
-        List<Integer> listCollectionSort = new ArrayList<>();
-        listCollectionSort.addAll(list);
+        List<Integer> listCollectionSort = new ArrayList<>(list);
         start = new Date().getTime();
         Collections.sort(listCollectionSort);
         end = new Date().getTime();
