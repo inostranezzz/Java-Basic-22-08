@@ -10,6 +10,7 @@ public class Client {
         this.age = age;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

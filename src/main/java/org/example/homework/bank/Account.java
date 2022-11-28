@@ -1,6 +1,7 @@
 package org.example.homework.bank;
 
 import java.util.Objects;
+import java.util.Random;
 
 public class Account {
     private final Integer number;
@@ -8,9 +9,9 @@ public class Account {
     private Double money;
 
     public Account(Integer number, Client client) {
+        Random random = new Random();
         this.number = number;
         this.client = client;
-
     }
 
     @Override
