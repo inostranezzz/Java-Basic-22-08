@@ -15,6 +15,6 @@ public class Work {
         } catch (OverLoadEmploeeException e) {
             System.out.println(e.getMessage());
         }
-
+        System.out.println("Все задачи назначены сотруднику");
     }
 }

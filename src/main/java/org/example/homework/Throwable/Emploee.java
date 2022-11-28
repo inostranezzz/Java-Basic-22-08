@@ -5,12 +5,12 @@ import java.util.List;
 
 public class Emploee {
     private final String name;
-    private final int maxCapacity;
+    private final int Capacity;
     private final List<Task> inWorkTask;
 
-    public Emploee(String name, int maxCapacity) {
+    public Emploee(String name, int Capacity) {
         this.name = name;
-        this.maxCapacity = maxCapacity;
+        this.Capacity = Capacity;
         this.inWorkTask = new ArrayList<>();
     }
 
@@ -20,7 +20,7 @@ public class Emploee {
 
     public void addInWorkTask(Task task) throws OverLoadEmploeeException {
         try {
-            if (inWorkTask.size() == maxCapacity) {
+            if (inWorkTask.size() == Capacity) {
                 throw new OverLoadEmploeeException("Работник занят другими задачами. Не назначена задача:" + " "+ task.getText());
             }
         } catch (OverLoadEmploeeException e) {
