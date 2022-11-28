@@ -14,25 +14,19 @@ public class Emploee {
         this.inWorkTask = new ArrayList<>();
     }
 
-    public List<Task> getInWorkTask() {
-        return inWorkTask;
+    public String getName() {
+        return name;
     }
 
-    public void addInWorkTask(Task task) throws OverLoadEmploeeException, IncorrectTaskException {
+    public void addInWorkTask(Task task) throws OverLoadEmploeeException {
         try {
-            if (task.getText() == null) {
-                throw new IncorrectTextTaskException("Не задан текст задачи");
-            }
             if (inWorkTask.size() == maxCapacity) {
-                throw new OverLoadEmploeeException("Работник занят другими задачами.");
+                throw new OverLoadEmploeeException("Работник занят другими задачами. Не назначена задача:" + " "+ task.getText());
             }
-        } catch (IncorrectTextTaskException e) {
-            throw new IncorrectTaskException("Задача не определена");
         } catch (OverLoadEmploeeException e) {
             System.out.println(e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Упс!!! Что-то пошло не так");
         }
+
         inWorkTask.add(task);
     }
 
