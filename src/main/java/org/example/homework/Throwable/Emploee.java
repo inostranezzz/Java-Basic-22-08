@@ -25,8 +25,10 @@ public class Emploee {
             }
         } catch (OverLoadEmploeeException e) {
             System.out.println(e.getMessage());
+            return;
         }
 
+        System.out.println("Сотруднику назначена задача: " + task.getText());
         inWorkTask.add(task);
     }
 
