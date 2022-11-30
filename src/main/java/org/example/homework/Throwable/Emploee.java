@@ -14,21 +14,17 @@ public class Emploee {
         this.inWorkTask = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void addInWorkTask(Task task) throws OverLoadEmploeeException {
         try {
             if (inWorkTask.size() == Capacity) {
-                throw new OverLoadEmploeeException("Работник занят другими задачами. Не назначена задача:" + " "+ task.getText());
+                throw new OverLoadEmploeeException("Работник " + name + " занят другими задачами. Не назначена задача:" + " "+ task.getText());
             }
         } catch (OverLoadEmploeeException e) {
             System.out.println(e.getMessage());
             return;
         }
 
-        System.out.println("Сотруднику назначена задача: " + task.getText() + ". Приоритет: " + task.getPriority());
+        System.out.println("Сотруднику " + name + " назначена задача: " + task.getText() + ". Приоритет: " + task.getPriority());
         inWorkTask.add(task);
     }
 
