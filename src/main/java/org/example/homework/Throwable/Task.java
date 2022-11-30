@@ -4,14 +4,13 @@ public class Task {
     private final String text;
     private final String priority;
 
-    public Task(String text, String priority) throws IncorrectTaskException {
+    public Task(String text, String priority) {
         try {
             if (text == null) {
                 throw new IncorrectTextTaskException("Не задан текст задачи");
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            throw new IncorrectTaskException("Некоректные входные данные");
+            throw new IncorrectTaskException("Некоректные входные данные",e);
         }
         this.text = text;
         this.priority = priority;

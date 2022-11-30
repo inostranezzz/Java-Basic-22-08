@@ -14,7 +14,7 @@ public class Emploee {
         this.inWorkTask = new ArrayList<>();
     }
 
-    public void addInWorkTask(Task task) throws OverLoadEmploeeException {
+    public void addInWorkTask(Task task){
         try {
             if (inWorkTask.size() == Capacity) {
                 throw new OverLoadEmploeeException("Работник " + name + " занят другими задачами. Не назначена задача:" + " "+ task.getText());
