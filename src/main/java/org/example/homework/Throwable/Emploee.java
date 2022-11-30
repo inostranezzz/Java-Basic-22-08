@@ -28,7 +28,7 @@ public class Emploee {
             return;
         }
 
-        System.out.println("Сотруднику назначена задача: " + task.getText());
+        System.out.println("Сотруднику назначена задача: " + task.getText() + ". Приоритет: " + task.getPriority());
         inWorkTask.add(task);
     }
 
