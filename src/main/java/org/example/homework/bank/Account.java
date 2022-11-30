@@ -5,13 +5,11 @@ import java.util.Random;
 
 public class Account {
     private final Integer number;
-    private final Client client;
     private Double money;
 
-    public Account(Integer number, Client client) {
+    public Account(Integer number) {
         Random random = new Random();
         this.number = number;
-        this.client = client;
     }
 
     @Override
