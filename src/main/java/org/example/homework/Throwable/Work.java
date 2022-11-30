@@ -2,7 +2,7 @@ package org.example.homework.Throwable;
 
 public class Work {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         Emploee emploee1 = new Emploee("Ivan", 3);
         try {
             Task task1 = new Task("Go a way!!!", "5");
