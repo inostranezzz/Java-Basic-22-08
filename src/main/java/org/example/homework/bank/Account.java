@@ -26,4 +26,8 @@ public class Account {
     public int hashCode() {
         return number != null ? number.hashCode() : 0;
     }
+
+    public Integer getNumber() {
+        return number;
+    }
 }

@@ -5,9 +5,14 @@ public class Client {
     private final int age;
 
 
+
     public Client(String firstName, int age) {
         this.firstName = firstName;
         this.age = age;
+    }
+
+    public String getClientInfo() {
+        return firstName + ": " + age + " years";
     }
 
 
@@ -28,5 +33,6 @@ public class Client {
         result = 31 * result + age;
         return result;
     }
+
 }
 
