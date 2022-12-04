@@ -8,14 +8,21 @@ public class Account {
     private Double money;
     private static final int MIN_ACCOUNT_BOUND = 10000000;
     private static final int MAX_ACCOUNT_BOUND = 19999999;
+    private static final Double OPEN_BONUS_MONEY = 5000D;
 
     public Account() {
         Random random = new Random();
         this.number = (random.nextInt(MAX_ACCOUNT_BOUND - MIN_ACCOUNT_BOUND) + MIN_ACCOUNT_BOUND);
+
+        this.money = (random.nextDouble(OPEN_BONUS_MONEY));
     }
 
     public Integer getNumber() {
         return this.number;
+    }
+
+    public Double getMoney() {
+        return money;
     }
 
     @Override

@@ -9,6 +9,7 @@ public class GoldBank {
     static Map<Client, Client> clients;
     static Map<Account, Account> accounts;
     static Map<Integer, Client> accountToClientMap;
+    private static final int COUNT_ACCOUNT = 3;
 
     public GoldBank() {
         GoldBank.clients = new HashMap<>();
@@ -32,13 +33,13 @@ public class GoldBank {
     public static void main(String[] args) {
         GoldBank goldBank = new GoldBank();
         Client client1 = createClient("Oleg", 18);
-        Client client2 = createClient("Ivan", 70);
+        Client client2 = createClient("Victor", 6);
 
-        createClientAccount(client1);
-        createClientAccount(client1);
-        createClientAccount(client1);
-        createClientAccount(client2);
-        createClientAccount(client2);
+        for (Client client : clients.keySet()) {
+            for (int i = 0; i < COUNT_ACCOUNT; i++) {
+                createClientAccount(client);
+            }
+        }
 
         System.out.println(client2.getClientInfo());
         long start1 = new Date().getTime();
@@ -46,7 +47,7 @@ public class GoldBank {
         long end1 = new Date().getTime();
         System.out.println((end1 - start1) + " ms");
         for (Account account : clientAccounts.keySet()) {
-            System.out.println(account.getNumber());
+            System.out.println(account.getNumber() + ": " + account.getMoney() + " GOLD");
         }
 
         System.out.println("Укажите номер счета:");
