@@ -41,9 +41,13 @@ public class Client {
 
     @Override
     public int hashCode() {
-        int result = firstName.hashCode();
-        result = 31 * result + age;
-        return result;
+        String firstNameToAge = firstName + age;
+        return firstNameToAge.hashCode();
+    }
+
+    public int hashCode(String firstName, int age) {
+        String firstNameToAge = firstName + age;
+        return firstNameToAge.hashCode();
     }
 
 }

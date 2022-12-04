@@ -5,23 +5,22 @@ import java.util.Random;
 
 public class Account {
     private final Integer number;
-    private Double money;
+    private final int money;
     private static final int MIN_ACCOUNT_BOUND = 10000000;
     private static final int MAX_ACCOUNT_BOUND = 19999999;
-    private static final Double OPEN_BONUS_MONEY = 5000D;
+    private static final int OPEN_BONUS_MONEY = 5000;
 
     public Account() {
         Random random = new Random();
         this.number = (random.nextInt(MAX_ACCOUNT_BOUND - MIN_ACCOUNT_BOUND) + MIN_ACCOUNT_BOUND);
-
-        this.money = (random.nextDouble(OPEN_BONUS_MONEY));
+        this.money = (random.nextInt(OPEN_BONUS_MONEY));
     }
 
     public Integer getNumber() {
         return this.number;
     }
 
-    public Double getMoney() {
+    public int getMoney() {
         return money;
     }
 
