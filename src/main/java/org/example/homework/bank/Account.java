@@ -6,10 +6,16 @@ import java.util.Random;
 public class Account {
     private final Integer number;
     private Double money;
+    private static final int MIN_ACCOUNT_BOUND = 10000000;
+    private static final int MAX_ACCOUNT_BOUND = 19999999;
 
-    public Account(Integer number) {
+    public Account() {
         Random random = new Random();
-        this.number = number;
+        this.number = (random.nextInt(MAX_ACCOUNT_BOUND - MIN_ACCOUNT_BOUND) + MIN_ACCOUNT_BOUND);
+    }
+
+    public Integer getNumber() {
+        return this.number;
     }
 
     @Override
@@ -27,7 +33,4 @@ public class Account {
         return number != null ? number.hashCode() : 0;
     }
 
-    public Integer getNumber() {
-        return number;
-    }
 }

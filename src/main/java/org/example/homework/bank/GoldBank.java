@@ -3,50 +3,60 @@ package org.example.homework.bank;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class GoldBank {
-    static Map<Client, Map<Account,Account>> clients;
-    static Map<Account, Client> accountToClientMap;
+    static Map<Client, Client> clients;
+    static Map<Account, Account> accounts;
+    static Map<Integer, Client> accountToClientMap;
 
-    public GoldBank(Map<Client, Map<Account,Account>> clients, Map<Account, Client> accountToClientMap) {
-        GoldBank.clients = clients;
-        GoldBank.accountToClientMap = accountToClientMap;
+    public GoldBank() {
+        GoldBank.clients = new HashMap<>();
+        GoldBank.accounts = new HashMap<>();
+        GoldBank.accountToClientMap = new HashMap<>();
+    }
+
+    private static Client createClient(String firstName, int age) {
+        Client client = new Client(firstName, age);
+        clients.put(client, client);
+        return client;
+    }
+
+    private static void createClientAccount(Client client) {
+        Account account = new Account();
+        client.addAccountToClient(account);
+        accounts.put(account, account);
+        accountToClientMap.put(account.getNumber(), client);
     }
 
     public static void main(String[] args) {
-        GoldBank goldBank = new GoldBank(new HashMap<>(),new HashMap<>());
-        Client client1 = new Client("Oleg", 18);
-        Map<Account,Account> client1ToAccountMap = new HashMap<>();
-        Client client2 = new Client("Ivan", 70);
-        Map<Account,Account> client2ToAccountMap = new HashMap<>();
-        Account account1 = new Account(12345);
-        client1ToAccountMap.put(account1,account1);
-        Account account2 = new Account(12344);
-        client1ToAccountMap.put(account2,account2);
-        Account account3 = new Account(22345);
-        client2ToAccountMap.put(account1,account1);
-        clients.put(client1,client1ToAccountMap);
-        clients.put(client2,client2ToAccountMap);
-        accountToClientMap.put(account1, client1);
-        accountToClientMap.put(account2, client1);
-        accountToClientMap.put(account3, client2);
+        GoldBank goldBank = new GoldBank();
+        Client client1 = createClient("Oleg", 18);
+        Client client2 = createClient("Ivan", 70);
 
-        long start = new Date().getTime();
-        System.out.println(client1.getClientInfo());
-        var clientAccounts = clients.get(client1);
-        for (Account account: clientAccounts.keySet()) {
+        createClientAccount(client1);
+        createClientAccount(client1);
+        createClientAccount(client1);
+        createClientAccount(client2);
+        createClientAccount(client2);
+
+        System.out.println(client2.getClientInfo());
+        long start1 = new Date().getTime();
+        var clientAccounts = clients.get(client2).getClientToAccountMap();
+        long end1 = new Date().getTime();
+        System.out.println((end1 - start1) + " ms");
+        for (Account account : clientAccounts.keySet()) {
             System.out.println(account.getNumber());
         }
-        long end = new Date().getTime();
-        System.out.println((end - start) + " ms");
 
-        start = new Date().getTime();
-        System.out.println(account3.getNumber());
-        System.out.println(accountToClientMap.get(account3).getClientInfo());
-        end = new Date().getTime();
-        System.out.println((end - start) + " ms");
+        System.out.println("Укажите номер счета:");
+        Scanner scanner = new Scanner(System.in);
+        var accountNumber = scanner.nextInt();
+        long start2 = new Date().getTime();
+        System.out.println(accountToClientMap.get(accountNumber).getClientInfo());
+        long end2 = new Date().getTime();
+        System.out.println((end2 - start2) + " ms");
 
     }
-
 
 }
