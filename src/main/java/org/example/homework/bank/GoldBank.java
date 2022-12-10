@@ -16,11 +16,6 @@ public class GoldBank {
         GoldBank.accountToClientMap = new HashMap<>();
     }
 
-    private static Client createClient(String firstName, int age) {
-        Client client = new Client(firstName, age);
-        clients.put(client, client);
-        return client;
-    }
 
     private static void createClient() {
         Random random = new Random();
@@ -39,7 +34,7 @@ public class GoldBank {
     }
 
     public static void main(String[] args) {
-        GoldBank goldBank = new GoldBank();
+      GoldBank goldBank = new GoldBank();
 
         for (int i = 0; i < COUNT_CLIENT; i++) {
             try {

@@ -8,7 +8,6 @@ public class Client {
     private final int age;
     private final HashMap<Account, Account> clientToAccountMap;
 
-
     public Client(String firstName, int age) {
         this.firstName = firstName;
         this.age = age;
@@ -45,10 +44,6 @@ public class Client {
         return firstNameToAge.hashCode();
     }
 
-    public int hashCode(String firstName, int age) {
-        String firstNameToAge = firstName + age;
-        return firstNameToAge.hashCode();
-    }
 
 }
 
