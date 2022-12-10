@@ -1,13 +1,29 @@
 package org.example.homework.bank;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Client {
     private final String firstName;
     private final int age;
-
+    private final HashMap<Account, Account> clientToAccountMap;
 
     public Client(String firstName, int age) {
         this.firstName = firstName;
         this.age = age;
+        this.clientToAccountMap = new HashMap<>();
+    }
+
+    public void addAccountToClient(Account account) {
+        clientToAccountMap.put(account,account);
+    }
+
+    public Map<Account, Account> getClientToAccountMap() {
+        return clientToAccountMap;
+    }
+
+    public String getClientInfo() {
+        return firstName + ": " + age + " years";
     }
 
 
@@ -24,9 +40,10 @@ public class Client {
 
     @Override
     public int hashCode() {
-        int result = firstName.hashCode();
-        result = 31 * result + age;
-        return result;
+        String firstNameToAge = firstName + age;
+        return firstNameToAge.hashCode();
     }
+
+
 }
 
