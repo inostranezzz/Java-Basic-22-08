@@ -1,4 +1,27 @@
 h1, h2 {color: steelblue;}
-.content-block {width: 800px; margin-left: 20px;}
-#statTab {border: 1px solid steelblue; border-collapse: collapse; width: 400px;}
-#statTab tr td {border: 1px solid steelblue; padding: 5px;}
+.input-block {
+              border: 1px solid steelblue;
+              width: 800px;
+              margin-left: 5px;
+              padding: 20px;
+              }
+#statTab {
+         border: 1px solid steelblue;
+         border-collapse: collapse;
+         width: 900px;
+         }
+#statTab tr td {
+                border: 1px solid steelblue;
+                padding: 5px;
+                }
+.header {
+        display: inline-block;
+        vertical-align: top;
+        margin: 5px;
+        }
+.logo{
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+        margin: 5px;
+        }
