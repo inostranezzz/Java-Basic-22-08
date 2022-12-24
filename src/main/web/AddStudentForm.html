@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Добавление студента</title>
+    <link rel="stylesheet" href="universitystyles.css">
+</head>
+<body>
+    <div>
+        <div>
+            <a href="https://blog.12edit.ru/mr-oizo-flat-beat/" target = "_blank">
+                <img src = "/home/ubuntu/otusHW/Java-Basic-22-08/src/main/web/oizo.png" width="10%" height="10%" alt = "Mr. Oizo"/>
+            </a>
+        </div>
+        <div>
+            <h2>Добро пожаловать в Университет Mr. Oizo!!!</h2>
+            <dl>
+                <dt>Мы это:</dt>
+                    <dd>Молодость!</dd>
+                    <dd>Веселье!</dd>
+                    <dd>Команда!</dd>
+            </dl>
+        </div>
+    </div>
+    <div>
+        <h2>Форма добавления информации о студенте</h2>
+        <form>
+            <div>
+                <label for = "fioTextBox">Имя студента:</label>
+                <input id = "fioTextBox" name = "fio" type="text"/>
+            </div>
+            <div>
+                <label for = "bornDate">Дата рождения:</label>
+                <input id = "bornDate" name = "date" type = "date"/>
+            </div>
+            <div>
+                <label>
+                    Пол:
+                    <select name="gender">
+                        <option value = "1">мужчина</option>
+                        <option value = "2">женщина</option>
+                    </select>
+                </label>
+            </div>
+            <br/>
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+    <br/>
+    <div>
+        <h2>Таблица студентов</h2>
+            <br/>
+            <table id = "statTab">
+                    <thead>
+                        <tr>
+                            <td>Имя студента</td>
+                            <td>Пол</td>
+                            <td>Дата рождения</td>
+                            <td>Возраст</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Кошелев Олег Юрьевич</td>
+                            <td>мужчина</td>
+                            <td>01.01.2000</td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Средний возраст студента</td>
+                            <td>22</td>
+                        </tr>
+                    </tfoot>
+            </table>
+
+    </div>
+</body>
+</html>
