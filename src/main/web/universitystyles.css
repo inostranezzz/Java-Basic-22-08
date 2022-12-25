@@ -5,12 +5,12 @@ h1, h2 {color: steelblue;}
               margin-left: 5px;
               padding: 20px;
               }
-#statTab {
+.statTab {
          border: 1px solid steelblue;
          border-collapse: collapse;
          width: 900px;
          }
-#statTab tr td {
+.statTab tr td {
                 border: 1px solid steelblue;
                 padding: 5px;
                 }
@@ -25,3 +25,11 @@ h1, h2 {color: steelblue;}
         width: 200px;
         margin: 5px;
         }
+.border-header{
+               border-block-end: solid #DAA520;
+               writing-mode: horizontal-tb;
+               }
+.oblique{
+         color: #DAA520;
+         font-style: oblique;
+         }

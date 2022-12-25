@@ -4,24 +4,41 @@
     <meta charset="UTF-8"/>
     <title>Добавление студента</title>
     <link rel="stylesheet" href="universitystyles.css">
+    <script>
+        function addStudentInfo(){
+            let studentsTab = document.getElementById("studentInfoTab").getElementsByTagName("tbody")[0];
+            let fioText = document.getElementById("fioTextBox");
+
+            let newRow = studentsTab.insertRow(studentsTab.rows.length-1);
+
+            let fioCell = newRow.insertCell(-1);
+            fioCell.appendChild(document.createTextNode("dfvdbfdbfd"));
+            let genderCell = newRow.insertCell(0);
+            genderCell.appendChild(document.createTextNode("dfvdbfdbfd"));
+            let bornDateCell = newRow.insertCell(1);
+            bornDateCell.appendChild(document.createTextNode("dfvdbfdbfd"));
+            let ageCell = newRow.insertCell(2);
+            ageCell.appendChild(document.createTextNode("dfvdbfdbfd"));
+        }
+    </script>
 </head>
 <body>
-    <div>
+    <header class="border-header">
         <div class="logo">
             <a href="https://blog.12edit.ru/mr-oizo-flat-beat/" target = "_blank">
                 <img src = "oizo.png" width = "200px" alt = "Mr. Oizo"/>
             </a>
         </div>
         <div class="header">
-            <h2>Добро пожаловать в Университет Mr. Oizo!!!</h2>
-            <dl>
+            <h2>Университет Mr. Oizo!!!</h2>
+            <dl class="oblique">
                 <dt>Мы это:</dt>
                     <dd>Молодость!</dd>
                     <dd>Веселье!</dd>
                     <dd>Команда!</dd>
             </dl>
         </div>
-    </div>
+    </header>
     <div>
         <h2>Форма добавления информации о студенте</h2>
         <form class="input-block">
@@ -42,15 +59,13 @@
                     </select>
                 </label>
             </div>
-            <br/>
-            <input type="submit" value="Добавить">
+            <button onclick="addStudentInfo()">Добавить</button>
         </form>
     </div>
-    <br/>
+
     <div>
         <h2>Таблица студентов</h2>
-            <br/>
-            <table id = "statTab">
+            <table class="statTab" id="studentInfoTab">
                     <thead>
                         <tr>
                             <td>Имя студента</td>
