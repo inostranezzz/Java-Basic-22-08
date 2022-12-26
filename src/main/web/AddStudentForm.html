@@ -15,13 +15,17 @@
 
             let fioCell = newRow.insertCell(0);
             fioCell.appendChild(document.createTextNode(fioText));
+
             let genderCell = newRow.insertCell(1);
             genderCell.appendChild(document.createTextNode(gender));
+
             let bornDateCell = newRow.insertCell(2);
             bornDateCell.appendChild(document.createTextNode(bornDate));
+
             let ageCell = newRow.insertCell(3);
             ageCell.appendChild(document.createTextNode(Math.floor((new Date() - new Date(bornDate))/1000/3600/24/365)));
-<!--            ageCell = ((Math.floor(new Date() - new Date(bornDate))/1000/3600/24/365));-->
+
+            document.getElementById("middleAge").innerHTML = "80";
         }
     </script>
 </head>
@@ -91,7 +95,7 @@
                         </tr>
                         <tr>
                             <td colspan="3">Средний возраст студента</td>
-                            <td>22</td>
+                            <td id="middleAge"></td>
                         </tr>
                     </tfoot>
             </table>
