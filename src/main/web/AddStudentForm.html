@@ -25,7 +25,13 @@
             let ageCell = newRow.insertCell(3);
             ageCell.appendChild(document.createTextNode(Math.floor((new Date() - new Date(bornDate))/1000/3600/24/365)));
 
-            document.getElementById("middleAge").innerHTML = "80";
+           let sumMiddleAge = count = 0;
+            for(let i = 0; i < studentsTab.rows.length; i++){
+                sumMiddleAge += parseFloat(studentsTab.rows[i].getElementsByTagName("td")[3].innerHTML);
+                count++;
+            }
+            let calcMiddleAge = sumMiddleAge/count;
+            document.getElementById("middleAge").innerHTML = Math.round(calcMiddleAge);
         }
     </script>
 </head>
@@ -82,12 +88,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Кошелев Олег Юрьевич</td>
-                            <td>мужчина</td>
-                            <td>01.01.2000</td>
-                            <td>22</td>
-                        </tr>
+<!--                        <tr>-->
+<!--                            <td>&nbsp;</td>-->
+<!--                            <td>&nbsp;</td>-->
+<!--                            <td>&nbsp;</td>-->
+<!--                            <td>&nbsp;</td>-->
+<!--                        </tr>-->
                     </tbody>
                     <tfoot>
                         <tr>
