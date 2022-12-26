@@ -19,6 +19,9 @@
             genderCell.appendChild(document.createTextNode(gender));
             let bornDateCell = newRow.insertCell(2);
             bornDateCell.appendChild(document.createTextNode(bornDate));
+            let ageCell = newRow.insertCell(3);
+            ageCell.appendChild(document.createTextNode(Math.floor((new Date() - new Date(bornDate))/1000/3600/24/365)));
+<!--            ageCell = ((Math.floor(new Date() - new Date(bornDate))/1000/3600/24/365));-->
         }
     </script>
 </head>
