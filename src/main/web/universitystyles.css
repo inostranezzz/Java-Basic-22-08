@@ -5,6 +5,10 @@ h1, h2 {color: steelblue;}
               margin-left: 5px;
               padding: 20px;
               }
+.input-section {
+              margin-left: 2px;
+              padding: 5px;
+              }
 .statTab {
          border: 1px solid steelblue;
          border-collapse: collapse;
