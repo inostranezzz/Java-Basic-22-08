@@ -76,62 +76,61 @@
         </div>
     </header>
     <div class="main">
-    <div>
-        <h2>Форма добавления информации о студенте</h2>
-        <div class="input-block">
-            <div class="input-section">
-                <label for = "fioTextBox">Имя студента:</label>
-                <input id = "fioTextBox" name = "fio" type="text" placeholder="Фамилия Имя Отчество"/>
-            </div>
-            <div class="input-section">
-                <label for = "bornDate">Дата рождения:</label>
-                <input id = "bornDate" name = "date" type = "date"/>
-            </div>
-            <div class="input-section">
-                <label>
-                    Пол:
-                    <select id = "genderBox" name="gender">
-                        <option>мужчина</option>
-                        <option>женщина</option>
-                    </select>
-                </label>
-            </div>
-            <div class="input-section">
-                <button class="onclick" onclick="addStudentInfo()">Добавить</button>
+        <div>
+            <h2>Форма добавления информации о студенте</h2>
+            <div class="input-block">
+                <div class="input-section">
+                    <label for = "fioTextBox">Имя студента:</label>
+                    <input id = "fioTextBox" name = "fio" type="text" placeholder="Фамилия Имя Отчество"/>
+                </div>
+                <div class="input-section">
+                    <label for = "bornDate">Дата рождения:</label>
+                    <input id = "bornDate" name = "date" type = "date"/>
+                </div>
+                <div class="input-section">
+                    <label>
+                        Пол:
+                        <select id = "genderBox" name="gender">
+                            <option>мужчина</option>
+                            <option>женщина</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="input-section">
+                    <button class="onclick" onclick="addStudentInfo()">Добавить</button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div>
-        <h2>Таблица студентов</h2>
-            <table class="statTab" id="studentInfoTab">
-                    <thead>
+        <div>
+            <h2>Таблица студентов</h2>
+                <table class="statTab" id="studentInfoTab">
+                        <thead>
+                            <tr>
+                                <td>Имя студента</td>
+                                <td>Пол</td>
+                                <td>Дата рождения</td>
+                                <td>Возраст</td>
+                            </tr>
+                        </thead>
+                        <tbody>
                         <tr>
-                            <td>Имя студента</td>
-                            <td>Пол</td>
-                            <td>Дата рождения</td>
-                            <td>Возраст</td>
+                            <td>Mr. Oizo</td>
+                            <td>мужчина</td>
+                            <td>01.01.1999</td>
+                            <td>23</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Mr. Oizo</td>
-                        <td>мужчина</td>
-                        <td>01.01.1999</td>
-                        <td>23</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="4">&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3">Средний возраст студента</td>
-                            <td id="middleAge">23</td>
-                        </tr>
-                    </tfoot>
-            </table>
-    </div>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Средний возраст студента</td>
+                                <td id="middleAge">23</td>
+                            </tr>
+                        </tfoot>
+                </table>
+        </div>
     </div>
 </body>
 </html>

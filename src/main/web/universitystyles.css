@@ -31,13 +31,13 @@ input[type=Date] {
   cursor: pointer;
 }
 
-.main {
-        display: inline-block;
-        }
+.main{
+     margin: 10px;
+     }
 
 .input-block {
               border: 1px solid steelblue;
-              width: 900px;
+              width: 100%;
               margin-left: 5px;
               }
 .input-section {
@@ -48,7 +48,7 @@ input[type=Date] {
          border: 1px solid steelblue;
          border-collapse: collapse;
          margin-left: 5px;
-         width: 900px;
+         width: 100%;
          }
 .statTab tr td {
                 border: 1px solid steelblue;
