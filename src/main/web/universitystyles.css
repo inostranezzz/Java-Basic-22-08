@@ -1,9 +1,8 @@
 h1, h2 {color: steelblue;}
 .input-block {
               border: 1px solid steelblue;
-              width: 800px;
+              width: 900px;
               margin-left: 5px;
-              padding: 20px;
               }
 .input-section {
               margin-left: 2px;
@@ -12,6 +11,7 @@ h1, h2 {color: steelblue;}
 .statTab {
          border: 1px solid steelblue;
          border-collapse: collapse;
+         margin-left: 5px;
          width: 900px;
          }
 .statTab tr td {

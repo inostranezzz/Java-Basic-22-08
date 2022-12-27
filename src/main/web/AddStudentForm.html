@@ -48,8 +48,8 @@
             let calcMiddleAge = sumMiddleAge/count;
             document.getElementById("middleAge").innerHTML = Math.ceil(calcMiddleAge);
 
-            document.getElementById("fioTextBox").value = "";
-            document.getElementById("bornDate").value = "";
+            document.getElementById("fioTextBox").innerHTML = "";
+            document.getElementById("bornDate").innerHTML = "";
         }
 
         function isBlank(str) {
@@ -80,7 +80,7 @@
         <div class="input-block">
             <div class="input-section">
                 <label for = "fioTextBox">Имя студента:</label>
-                <input id = "fioTextBox" name = "fio" type="text"/>
+                <input id = "fioTextBox" name = "fio" type="text" placeholder="Фамилия Имя Отчество"/>
             </div>
             <div class="input-section">
                 <label for = "bornDate">Дата рождения:</label>
@@ -111,6 +111,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                        <td>Mr. Oizo</td>
+                        <td>мужчина</td>
+                        <td>01.01.1999</td>
+                        <td>23</td>
+                    </tr>
                     </tbody>
                     <tfoot>
                         <tr>
@@ -118,7 +124,7 @@
                         </tr>
                         <tr>
                             <td colspan="3">Средний возраст студента</td>
-                            <td id="middleAge"></td>
+                            <td id="middleAge">23</td>
                         </tr>
                     </tfoot>
             </table>
