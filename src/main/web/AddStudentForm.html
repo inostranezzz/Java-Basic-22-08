@@ -8,8 +8,23 @@
         function addStudentInfo(){
             let studentsTab = document.getElementById("studentInfoTab").getElementsByTagName("tbody")[0];
             let fioText = document.getElementById("fioTextBox").value;
-            let gender = document.getElementById("genderBox").value;
             let bornDate = document.getElementById("bornDate").value;
+            let gender = document.getElementById("genderBox").value;
+
+            if(isBlank(fioText)){
+                alert("Безликие не учатся у Mr. Oizo");
+                return;
+            }
+
+            if(isBlank(bornDate)){
+                alert("Не имеющие даты рождения не учатся у Mr. Oizo");
+                return;
+            }
+
+            if(Math.floor((new Date() - new Date(bornDate))/1000/3600/24/365) < "18"){
+                alert("Не веселящиеся не учатся у Mr. Oizo");
+                return;
+            }
 
             let newRow = studentsTab.insertRow(studentsTab.rows.length);
 
@@ -33,7 +48,12 @@
             let calcMiddleAge = sumMiddleAge/count;
             document.getElementById("middleAge").innerHTML = Math.ceil(calcMiddleAge);
 
+            document.getElementById("fioTextBox").value = "";
+            document.getElementById("bornDate").value = "";
+        }
 
+        function isBlank(str) {
+            return (!str || /^\s*$/.test(str));
         }
     </script>
 </head>
@@ -52,6 +72,7 @@
                     <dd>Веселье!</dd>
                     <dd>Команда!</dd>
             </dl>
+            <p>18+</p>
         </div>
     </header>
     <div>
@@ -90,12 +111,6 @@
                         </tr>
                     </thead>
                     <tbody>
-<!--                        <tr>-->
-<!--                            <td>&nbsp;</td>-->
-<!--                            <td>&nbsp;</td>-->
-<!--                            <td>&nbsp;</td>-->
-<!--                            <td>&nbsp;</td>-->
-<!--                        </tr>-->
                     </tbody>
                     <tfoot>
                         <tr>
