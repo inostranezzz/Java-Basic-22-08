@@ -1,0 +1,81 @@
+<!DOCTYPE  html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Добавление студента</title>
+    <link rel="stylesheet" href="universitystyles.css">
+    <script src="scriptStydent.js"></script>
+</head>
+<body>
+    <header class="border-header">
+        <div class="logo">
+            <a href="https://blog.12edit.ru/mr-oizo-flat-beat/" target = "_blank">
+                <img src = "oizo.png" width = "200px" alt = "Mr. Oizo"/>
+            </a>
+        </div>
+        <div class="header">
+            <h2>Университет Mr. Oizo!!!</h2>
+            <dl class="oblique">
+                <dt>Мы это:</dt>
+                    <dd>Молодость!</dd>
+                    <dd>Веселье!</dd>
+                    <dd>Команда!</dd>
+            </dl>
+            <p class="censor">18+</p>
+        </div>
+    </header>
+    <div class="main">
+        <div class="add-info">
+            <h2>Добавить студента</h2>
+            <div class="input-block">
+                <div class="input-section">
+                    <label for = "fioTextBox">Имя студента</label>
+                    <input id = "fioTextBox" name = "fio" type="text" placeholder="Фамилия Имя Отчество"/>
+                </div>
+                <div class="input-section">
+                    <label for = "bornDate">Дата рождения</label>
+                    <input id = "bornDate" name = "date" type = "date"/>
+                </div>
+                <div class="input-section">
+                    <label>
+                        Пол
+                        <select id = "genderBox" name="gender">
+                            <option>мужчина</option>
+                            <option>женщина</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="input-section">
+                    <button class="onclick" onclick="addStudentInfo()">Добавить</button>
+                </div>
+            </div>
+        </div>
+        <div class="table-info">
+            <h2>Таблица студентов</h2>
+                <table class="statTab" id="studentInfoTab">
+                        <thead>
+                            <tr>
+                                <td>Имя студента</td>
+                                <td>Пол</td>
+                                <td>Дата рождения</td>
+                                <td>Возраст</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Средний возраст студента</td>
+                                <td id="middleAge"></td>
+                            </tr>
+                        </tfoot>
+                </table>
+        </div>
+    </div>
+</body>
+</html>
