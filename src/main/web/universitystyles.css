@@ -33,6 +33,7 @@ input[type=Date] {
 
 .main{
      margin: 10px;
+     writing-mode: horizontal-tb;
      }
 
 .input-block {
@@ -76,3 +77,15 @@ input[type=Date] {
 .censor{
         color: #696969;
        }
+.add-info{
+        display: inline-block;
+        vertical-align: top;
+        width: 500px;
+        margin: 5px;
+        }
+.table-info{
+        display: inline-block;
+        vertical-align: top;
+        width: 1000px;
+        margin: 5px;
+            }
