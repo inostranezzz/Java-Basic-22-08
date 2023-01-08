@@ -12,7 +12,7 @@ public class RubleCurrencyInput implements CurrencyInput{
         boolean isCorrectAmount = false;
         while (!(isLong&isCorrectAmount)) {
             Scanner scanner = new Scanner(System.in);
-            isLong = scanner.hasNextInt();
+            isLong = scanner.hasNextLong();
             if (isLong) {
                 amount = scanner.nextLong();
                 isCorrectAmount = true;
