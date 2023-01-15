@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 public class RubleCurrencyInput implements CurrencyInput{
     @Override
-    public long readAmount(){
+    public int readAmount(){
         System.out.println("Введите сумму в рублях без копеек:");
 
-        long amount = 0;
+        int amount = 0;
         boolean isLong = false;
         boolean isCorrectAmount = false;
         while (!(isLong&isCorrectAmount)) {
             Scanner scanner = new Scanner(System.in);
-            isLong = scanner.hasNextLong();
+            isLong = scanner.hasNextInt();
             if (isLong) {
-                amount = scanner.nextLong();
+                amount = scanner.nextInt();
                 isCorrectAmount = true;
             } else {
                 System.out.println("Вы ввели не число. Попробуйте еще раз:");
