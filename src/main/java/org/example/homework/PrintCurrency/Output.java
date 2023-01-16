@@ -1,6 +1,6 @@
 package org.example.homework.PrintCurrency;
 
-public interface UserOutput {
+public interface Output {
 
     void displayText(String text);
 

@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class RubleCurrencyInput implements CurrencyInput{
     @Override
     public int readAmount(){
-        System.out.println("Введите сумму в рублях без копеек:");
 
         int amount = 0;
         boolean isLong = false;

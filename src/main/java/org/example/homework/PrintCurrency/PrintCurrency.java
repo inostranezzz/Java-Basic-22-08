@@ -1,27 +1,26 @@
 package org.example.homework.PrintCurrency;
 
-import org.example.homework.oop.ConsoleUserOutput;
-import org.example.homework.oop.UserOutput;
-
 public class PrintCurrency {
-    private final CurrencyInput currencyInput;
-    private static UserOutput userOutput;
+    private static Input input;
+    private static Output output;
 
 
-    public PrintCurrency(CurrencyInput currencyInput, UserOutput userOutput) {
-        this.currencyInput = currencyInput;
-        this.userOutput = userOutput;
+    public PrintCurrency(Input input, Output output) {
+        this.input = input;
+        this.output = output;
     }
 
     public static void main(String[] args) {
 
-        RubleCurrencyInput rubleCurrencyInput = new RubleCurrencyInput();
-        PrintCurrency printCurrency = new PrintCurrency(rubleCurrencyInput, new ConsoleUserOutput());
-        int amountInput = printCurrency.currencyInput.readAmount();
+        PrintCurrency printCurrency = new PrintCurrency(new ConsoleInput(), new ConsoleOutput());
+
+        output.displayText("Введите сумму в рублях без копеек:");
+
+        int amountInput = input.readInt(0, 1000000);
 
         Amount amount = new Amount(amountInput);
 
-        userOutput.displayText(amount.displayAmount());
+        output.displayText(amount.displayAmount());
 
     }
 
