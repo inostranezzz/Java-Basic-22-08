@@ -16,7 +16,7 @@ public class ConsoleInput implements Input {
 
         int numberInt = scanner.nextInt();
 
-        if (numberInt <= minValue | numberInt >= maxValue) {
+        if (numberInt < minValue | numberInt > maxValue) {
             throw new ValidationInputIntException("Получено некорректное значение:" + numberInt);
         }
 

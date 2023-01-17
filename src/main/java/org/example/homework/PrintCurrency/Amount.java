@@ -10,6 +10,7 @@ public class Amount {
             {"рубль", "рублей", "рубля"},
             {"доллар", "долларов", "доллара"}
     };
+    private static final CurrencyISO currencyCode = CurrencyISO.RUB;
 
     public Amount(int amount) {
        this.amount = amount;
@@ -20,7 +21,7 @@ public class Amount {
 
         AmountForm amountForm = getAmountForm();
 
-        return NumberFormat.getNumberInstance(Locale.US).format(amount).replace(",", " ") + " " + CURRENCY_IN_WORDS[0][amountForm.getArraysIndex()];
+        return NumberFormat.getNumberInstance(Locale.US).format(amount).replace(",", " ") + " " + CURRENCY_IN_WORDS[currencyCode.getArraysIndex()][amountForm.getArraysIndex()];
     }
 
     private AmountForm getAmountForm() {
