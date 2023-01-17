@@ -6,11 +6,8 @@ import java.util.Locale;
 
 public class Amount {
     private final int amount;
-    private static final String[][] CURRENCY_IN_WORDS = new String[][]{
-            {"рубль", "рублей", "рубля"},
-            {"доллар", "долларов", "доллара"}
-    };
-    private static final CurrencyISO currencyCode = CurrencyISO.RUB;
+
+    private static final CurrencyISO currencyCode = CurrencyISO.EUR;
 
     public Amount(int amount) {
        this.amount = amount;
@@ -21,7 +18,7 @@ public class Amount {
 
         AmountForm amountForm = getAmountForm();
 
-        return NumberFormat.getNumberInstance(Locale.US).format(amount).replace(",", " ") + " " + CURRENCY_IN_WORDS[currencyCode.getArraysIndex()][amountForm.getArraysIndex()];
+        return NumberFormat.getNumberInstance(Locale.US).format(amount).replace(",", " ") + " " + currencyCode.getCurrencyInWord(amountForm.getArraysIndex());
     }
 
     private AmountForm getAmountForm() {

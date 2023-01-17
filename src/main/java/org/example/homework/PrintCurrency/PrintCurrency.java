@@ -9,7 +9,7 @@ public class PrintCurrency {
 
     public static void main(String[] args) {
 
-        output.displayText("Введите сумму в рублях без копеек:");
+        output.displayText("Введите сумму в рублях:");
         boolean isCorrectAmount = false;
         while (!(isCorrectAmount)) {
             try {
