@@ -7,12 +7,15 @@ import java.util.Locale;
 public class Amount {
     private final int amount;
 
-    private static final CurrencyISO currencyCode = CurrencyISO.EUR;
+    private static CurrencyISO currencyCode = CurrencyISO.RUB;
 
     public Amount(int amount) {
        this.amount = amount;
     }
 
+    public static void setCurrencyCode(CurrencyISO currencyCode) {
+        Amount.currencyCode = currencyCode;
+    }
 
     public String displayAmount() {
 
