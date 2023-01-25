@@ -1,4 +1,4 @@
-package org.example;
+package org.example.PrintCurrency;
 
 import org.example.homework.PrintCurrency.Amount;
 import org.example.homework.PrintCurrency.CurrencyISO;
