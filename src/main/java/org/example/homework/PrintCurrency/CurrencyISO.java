@@ -14,10 +14,6 @@ public enum CurrencyISO {
         this.currencyInWord = currencyInWord;
     }
 
-    public int getArraysIndex() {
-        return this.arraysIndex;
-    }
-
     public String getCurrencyInWord(int arraysIndex) {
         return currencyInWord[arraysIndex];
     }

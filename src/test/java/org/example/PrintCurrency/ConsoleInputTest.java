@@ -5,11 +5,10 @@ import org.example.homework.PrintCurrency.ValidationInputIntException;
 import org.junit.*;
 
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
+
 
 
 public class ConsoleInputTest {
-    private final InputStream systemIn = System.in;
 
     public void setDownStreams(String data) {
         ByteArrayInputStream input = new ByteArrayInputStream(data.getBytes());
@@ -31,7 +30,7 @@ public class ConsoleInputTest {
     }
 
     @Test
-    public void testTextConsoleInput_withNegativeValue() throws ValidationInputIntException {
+    public void testTextConsoleInput_withNegativeValue() {
         boolean thrown = false;
         try {
             String testInt = "-1";
@@ -45,7 +44,7 @@ public class ConsoleInputTest {
     }
 
     @Test
-    public void testTextConsoleInput_withOverValue() throws ValidationInputIntException {
+    public void testTextConsoleInput_withOverValue(){
         boolean thrown = false;
         try {
             String testInt = "1000001";
@@ -57,4 +56,5 @@ public class ConsoleInputTest {
         }
         Assert.assertTrue(thrown);
     }
+
 }
