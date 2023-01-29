@@ -4,8 +4,6 @@ import org.example.homework.PrintCurrency.Amount;
 import org.example.homework.PrintCurrency.CurrencyISO;
 import org.junit.*;
 
-import java.io.PrintStream;
-
 public class AmountTest {
 
     @After
