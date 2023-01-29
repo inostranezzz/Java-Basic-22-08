@@ -57,4 +57,18 @@ public class ConsoleInputTest {
         Assert.assertTrue(thrown);
     }
 
+    @Test
+    public void testTextConsoleInput_withStringValue(){
+        boolean thrown = false;
+        try {
+            String testInt = "Text";
+            setDownStreams(testInt);
+            ConsoleInput consoleInput = new ConsoleInput();
+            consoleInput.readInt(0, 1000000);
+        } catch(ValidationInputIntException e){
+            thrown = true;
+        }
+        Assert.assertTrue(thrown);
+    }
+
 }
