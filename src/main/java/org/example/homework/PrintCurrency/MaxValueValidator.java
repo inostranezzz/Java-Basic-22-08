@@ -15,6 +15,6 @@ public class MaxValueValidator implements Validator {
 
     @Override
     public String message() {
-        return "Введено число большее значению:" + maxValue;
+        return "Введено значение превышающее максимольно допустимое. Введите число меньшее значению " + maxValue + " :";
     }
 }
