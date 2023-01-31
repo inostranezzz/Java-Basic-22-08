@@ -1,0 +1,13 @@
+version: "1.0"
+services:
+  postgres2:
+    image: postgres:13.1
+    environment:
+      POSTGRES_DB: "survey"
+      POSTGRES_USER: "java_basic"
+      POSTGRES_PASSWORD: "survey"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/var/lib/postgresql/data #здесь выбрать реальную папку
+    ports:
+      - "5431:5432"
