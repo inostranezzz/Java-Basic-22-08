@@ -33,8 +33,7 @@ public class AmountTest {
 
     @Test
     public void test() {
-        Amount amount = new Amount(inputValue);
-        Amount.setCurrencyCode(CurrencyISO.valueOf(ccy));
+        Amount amount = new Amount(inputValue, CurrencyISO.valueOf(ccy));
         Assert.assertEquals(expected, amount.displayAmount());
     }
 

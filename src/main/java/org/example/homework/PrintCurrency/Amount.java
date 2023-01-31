@@ -6,22 +6,24 @@ import java.util.Locale;
 
 public class Amount {
     private final int amount;
+    private final CurrencyISO ccy;
 
-    private static CurrencyISO currencyCode = CurrencyISO.RUB;
+/*    private static CurrencyISO currencyCode = CurrencyISO.RUB;*/
 
-    public Amount(int amount) {
+    public Amount(int amount, CurrencyISO ccy) {
        this.amount = amount;
+       this.ccy = ccy;
     }
 
-    public static void setCurrencyCode(CurrencyISO currencyCode) {
+/*    public static void setCurrencyCode(CurrencyISO currencyCode) {
         Amount.currencyCode = currencyCode;
     }
-
+*/
     public String displayAmount() {
 
         AmountForm amountForm = getAmountForm();
 
-        return NumberFormat.getNumberInstance(Locale.US).format(amount).replace(",", " ") + " " + currencyCode.getCurrencyInWord(amountForm.getArraysIndex());
+        return NumberFormat.getNumberInstance(Locale.US).format(amount).replace(",", " ") + " " + ccy.getCurrencyInWord(amountForm.getArraysIndex());
     }
 
     private AmountForm getAmountForm() {

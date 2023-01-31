@@ -2,6 +2,7 @@ package org.example.homework.PrintCurrency;
 
 public class PrintCurrency {
     private static int amountInput;
+    private static final CurrencyISO currencyCode = CurrencyISO.RUB;
     private static final Input input = new ConsoleInput();
     private static final Output output = new ConsoleOutput();
 
@@ -21,7 +22,7 @@ public class PrintCurrency {
             }
         }
 
-        Amount amount = new Amount(amountInput);
+        Amount amount = new Amount(amountInput, currencyCode);
         output.displayText(amount.displayAmount());
 
     }
