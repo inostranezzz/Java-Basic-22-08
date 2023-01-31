@@ -3,131 +3,41 @@ package org.example.PrintCurrency;
 import org.example.homework.PrintCurrency.Amount;
 import org.example.homework.PrintCurrency.CurrencyISO;
 import org.junit.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+
+import static org.example.homework.PrintCurrency.CurrencyISO.*;
+
+@RunWith(Parameterized.class)
 public class AmountTest {
 
-
-
-/*    @After
-    public void resetStatic() {
-        Amount.setCurrencyCode(CurrencyISO.RUB);
+    @Parameterized.Parameters(name = "{index}: {0} -> {2}")
+    public static Iterable<Object[]> data() {
+        return Arrays.asList(new Object[][] {
+                { 1, "RUB", "1 рубль" }, { 101, "RUB", "101 рубль" }, { 20, "RUB", "20 рублей" }, { 111, "RUB", "111 рублей" }, { 114, "RUB", "114 рублей" }, { 2, "RUB", "2 рубля" }, { 4, "RUB", "4 рубля" },
+                { 1, "USD", "1 доллар" }, { 101, "USD", "101 доллар" }, { 20, "USD", "20 долларов" }, { 111, "USD", "111 долларов" }, { 114, "USD", "114 долларов" }, { 2, "USD", "2 доллара" }, { 4, "USD", "4 доллара" },
+                { 1, "EUR", "1 евро" }, { 101, "EUR", "101 евро" }, { 20, "EUR", "20 евро" }, { 111, "EUR", "111 евро" }, { 114, "EUR", "114 евро" }, { 2, "EUR", "2 евро" }, { 4, "EUR", "4 евро" }
+        });
     }
 
-    @Test
-    public void testAmountRUB(){
-        Amount amount = new Amount(1);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("1 рубль", result);
-    }
-    @Test
-    public void testAmountUSD(){
-        Amount amount = new Amount(1);
-        Amount.setCurrencyCode(CurrencyISO.USD);
-        String result = amount.displayAmount();
-        Assert.assertEquals("1 доллар", result);
-    }
-    @Test
-    public void testAmountEUR(){
-        Amount amount = new Amount(1);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("1 евро", result);
-    }
-    @Test
-    public void testAmountRUB_withSingle(){
-        Amount amount = new Amount(101);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("101 рубль", result);
+    private int inputValue;
+    private String expected;
+    private String ccy;
+
+    public AmountTest(int inputValue, String ccy, String expected) {
+        this.inputValue = inputValue;
+        this.ccy = ccy;
+        this.expected = expected;
     }
 
     @Test
-    public void testAmountRUB_withPlural(){
-        Amount amount = new Amount(12);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("12 рублей", result);
-    }
-
-    @Test
-    public void testAmountRUB_withPluralAdditionMin(){
-        Amount amount = new Amount(111);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("111 рублей", result);
-    }
-
-    @Test
-    public void testAmountRUB_withPluralAdditionMax(){
-        Amount amount = new Amount(114);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("114 рублей", result);
-    }
-
-    @Test
-    public void testAmountRUB_withIrregularMin(){
-        Amount amount = new Amount(2);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("2 рубля", result);
-    }
-    @Test
-    public void testAmountRUB_withIrregularMax(){
-        Amount amount = new Amount(4);
-        Amount.setCurrencyCode(CurrencyISO.RUB);
-        String result = amount.displayAmount();
-        Assert.assertEquals("4 рубля", result);
-    }
-
-    @Test
-    public void testAmountEUR_withSingle(){
-        Amount amount = new Amount(101);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("101 евро", result);
-    }
-
-    @Test
-    public void testAmountEUR_withPlural(){
-        Amount amount = new Amount(12);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("12 евро", result);
-    }
-
-    @Test
-    public void testAmountEUR_withPluralAdditionMin(){
-        Amount amount = new Amount(111);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("111 евро", result);
-    }
-
-    @Test
-    public void testAmountEUR_withPluralAdditionMax(){
-        Amount amount = new Amount(114);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("114 евро", result);
-    }
-
-    @Test
-    public void testAmountEUR_withIrregularMin(){
-        Amount amount = new Amount(2);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("2 евро", result);
-    }
-    @Test
-    public void testAmountEUR_withIrregularMax(){
-        Amount amount = new Amount(4);
-        Amount.setCurrencyCode(CurrencyISO.EUR);
-        String result = amount.displayAmount();
-        Assert.assertEquals("4 евро", result);
+    public void test() {
+        Amount amount = new Amount(inputValue);
+        Amount.setCurrencyCode(CurrencyISO.valueOf(ccy));
+        Assert.assertEquals(expected, amount.displayAmount());
     }
 
 
- */
 }

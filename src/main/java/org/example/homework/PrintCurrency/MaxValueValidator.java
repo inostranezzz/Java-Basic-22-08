@@ -10,11 +10,11 @@ public class MaxValueValidator implements Validator {
     @Override
     public boolean validate(String param) {
 
-        return Integer.parseInt(param) < maxValue;
+        return Integer.parseInt(param) <= maxValue;
     }
 
     @Override
     public String message() {
-        return "Введено значение превышающее максимольно допустимое. Введите число меньшее значению " + maxValue + " :";
+        return "Введено значение превышающее максимольно допустимое. Введите число меньшее значению " + maxValue + ":";
     }
 }

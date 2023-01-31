@@ -15,6 +15,6 @@ public class MinValueValidator implements Validator {
 
     @Override
     public String message() {
-        return "Введено значение меньше минимально допустимого. Введите число начиная со значения " + minValue + " :";
+        return "Введено значение меньше минимально допустимого. Введите число начиная со значения " + minValue + ":";
     }
 }
