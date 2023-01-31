@@ -8,7 +8,6 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 
-import static org.example.homework.PrintCurrency.CurrencyISO.*;
 
 @RunWith(Parameterized.class)
 public class AmountTest {
