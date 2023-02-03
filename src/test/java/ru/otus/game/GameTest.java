@@ -63,6 +63,6 @@ public class GameTest {
     public void diceResult() {
         Game game = new Game(new DiceTest(), new GameWinnerTestPrinter());
         game.playGame(new Player(nameFirstPlayer), new Player(nameSecondPlayer));
-        Assert.assertEquals(playWinner,expected);
+        Assert.assertEquals(expected, playWinner);
     }
 }
