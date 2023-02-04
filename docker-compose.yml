@@ -1,6 +1,6 @@
 version: "1.0"
 services:
-  postgres2:
+  postgres-survey:
     image: postgres:13.1
     environment:
       POSTGRES_DB: "survey"
@@ -8,6 +8,6 @@ services:
       POSTGRES_PASSWORD: "survey"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:
-      - .:/Documents/postgresql/data #здесь выбрать реальную папку
+      - /Users/justoleg/Documents/postgresql/data:/var/lib/postgresql/data/pgdata
     ports:
       - "5431:5432"
