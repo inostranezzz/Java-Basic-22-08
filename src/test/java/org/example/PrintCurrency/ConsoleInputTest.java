@@ -1,7 +1,6 @@
 package org.example.PrintCurrency;
 
-import org.example.homework.PrintCurrency.ConsoleInput;
-import org.example.homework.PrintCurrency.ValidationInputIntException;
+import org.example.homework.PrintCurrency.*;
 import org.junit.*;
 
 import java.io.ByteArrayInputStream;
@@ -9,11 +8,12 @@ import java.io.ByteArrayInputStream;
 
 
 public class ConsoleInputTest {
-
+    Validator[] validators = {new MinValueValidator(0), new MaxValueValidator(1000000)};
     public void setDownStreams(String data) {
         ByteArrayInputStream input = new ByteArrayInputStream(data.getBytes());
         System.setIn(input);
     }
+
 
     @After
     public void cleanDownStreams() {
@@ -25,7 +25,7 @@ public class ConsoleInputTest {
         String testInt = "1";
         setDownStreams(testInt);
         ConsoleInput consoleInput = new ConsoleInput();
-        String result = String.valueOf(consoleInput.readInt(0, 1000000));
+        String result = String.valueOf(consoleInput.readInt(validators));
         Assert.assertEquals(testInt, result);
     }
 
@@ -36,7 +36,7 @@ public class ConsoleInputTest {
             String testInt = "-1";
             setDownStreams(testInt);
             ConsoleInput consoleInput = new ConsoleInput();
-            consoleInput.readInt(0, 1000000);
+            consoleInput.readInt(validators);
         } catch(ValidationInputIntException e){
             thrown = true;
         }
@@ -50,7 +50,7 @@ public class ConsoleInputTest {
             String testInt = "1000001";
             setDownStreams(testInt);
             ConsoleInput consoleInput = new ConsoleInput();
-            consoleInput.readInt(0, 1000000);
+            consoleInput.readInt(validators);
         } catch(ValidationInputIntException e){
             thrown = true;
         }
@@ -64,7 +64,7 @@ public class ConsoleInputTest {
             String testInt = "Text";
             setDownStreams(testInt);
             ConsoleInput consoleInput = new ConsoleInput();
-            consoleInput.readInt(0, 1000000);
+            consoleInput.readInt(validators);
         } catch(ValidationInputIntException e){
             thrown = true;
         }

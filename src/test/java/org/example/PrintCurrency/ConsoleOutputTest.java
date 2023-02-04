@@ -14,15 +14,18 @@ public class ConsoleOutputTest {
     public void setUpStreams() {
         System.setOut(new PrintStream(output));
     }
+
     @After
     public void cleanUpStreams() {
         System.setOut(null);
     }
+
     @Test
     public void testTextConsoleOutput() {
         ConsoleOutput consoleOutput = new ConsoleOutput();
         consoleOutput.displayText("Текст тест");
         Assert.assertEquals("Текст тест\n", output.toString());
     }
+
 
 }
