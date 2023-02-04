@@ -4,7 +4,7 @@ services:
     image: postgres:13.1
     environment:
       POSTGRES_DB: "survey"
-      POSTGRES_USER: "java_basic"
+      POSTGRES_USER: "project_basic"
       POSTGRES_PASSWORD: "survey"
       PGDATA: "/var/lib/postgresql/data/pgdata"
     volumes:

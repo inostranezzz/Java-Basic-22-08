@@ -8,17 +8,11 @@ public class Amount {
     private final int amount;
     private final CurrencyISO ccy;
 
-/*    private static CurrencyISO currencyCode = CurrencyISO.RUB;*/
-
     public Amount(int amount, CurrencyISO ccy) {
        this.amount = amount;
        this.ccy = ccy;
     }
 
-/*    public static void setCurrencyCode(CurrencyISO currencyCode) {
-        Amount.currencyCode = currencyCode;
-    }
-*/
     public String displayAmount() {
 
         AmountForm amountForm = getAmountForm();

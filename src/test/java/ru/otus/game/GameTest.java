@@ -36,7 +36,7 @@ public class GameTest {
         this.expected = expected;
     }
 
-    public class DiceTest implements Dice {
+    public class DiceStub implements Dice {
         private static boolean choice = true;
         @Override
         public int roll() {
@@ -51,7 +51,7 @@ public class GameTest {
         }
     }
 
-    public class GameWinnerTestPrinter implements GameWinnerPrinter {
+    public class GameWinnerPrinterStub implements GameWinnerPrinter {
         @Override
         public void printWinner(Player winner) {
             playWinner = winner.getName();
@@ -61,7 +61,7 @@ public class GameTest {
 
     @Test
     public void diceResult() {
-        Game game = new Game(new DiceTest(), new GameWinnerTestPrinter());
+        Game game = new Game(new DiceStub(), new GameWinnerPrinterStub());
         game.playGame(new Player(nameFirstPlayer), new Player(nameSecondPlayer));
         Assert.assertEquals(expected, playWinner);
     }
